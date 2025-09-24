@@ -78,23 +78,33 @@ class PwaConnectionBar extends HTMLElement {
     const extraire = this.shadowRoot.getElementById('extraire');
     const vider = this.shadowRoot.getElementById('vider');
     // Label
-    if (this.state === 'online') label.textContent = this.pwaConfig.onlineLabel;
-    else if (this.state === 'offline') label.textContent = this.pwaConfig.offlineLabel;
-    else label.textContent = this.pwaConfig.offlineSimLabel;
+    if (label) {
+      if (this.state === 'online') label.textContent = this.pwaConfig.onlineLabel;
+      else if (this.state === 'offline') label.textContent = this.pwaConfig.offlineLabel;
+      else label.textContent = this.pwaConfig.offlineSimLabel;
+    }
     // Boutons
-    changerEtat.style.display = (this.state === 'online' || this.state === 'offline-sim') ? '' : 'none';
-    changerEtat.textContent = (this.state === 'offline-sim') ? 'Revenir en ligne' : 'Basculer mode simulé';
-    extraire.style.display = (this.state === 'online') ? '' : 'none';
-    extraire.textContent = this.pwaConfig.extractButtonLabel;
-    vider.style.display = (this.state === 'online') ? '' : 'none';
-    vider.textContent = this.pwaConfig.clearCacheButtonLabel;
+    if (changerEtat) {
+      changerEtat.style.display = (this.state === 'online' || this.state === 'offline-sim') ? '' : 'none';
+      changerEtat.textContent = (this.state === 'offline-sim') ? 'Revenir en ligne' : 'Basculer mode simulé';
+    }
+    if (extraire) {
+      extraire.style.display = (this.state === 'online') ? '' : 'none';
+      extraire.textContent = this.pwaConfig.extractButtonLabel;
+    }
+    if (vider) {
+      vider.style.display = (this.state === 'online') ? '' : 'none';
+      vider.textContent = this.pwaConfig.clearCacheButtonLabel;
+    }
     // Message si pas de cache et hors ligne
     const msg = this.shadowRoot.getElementById('msgNoCache');
-    msg.textContent = this.pwaConfig.noCacheMessage;
-    if ((this.state === 'offline' || this.state === 'offline-sim') && !this.hasCache) {
-      msg.style.display = '';
-    } else {
-      msg.style.display = 'none';
+    if (msg) {
+      msg.textContent = this.pwaConfig.noCacheMessage;
+      if ((this.state === 'offline' || this.state === 'offline-sim') && !this.hasCache) {
+        msg.style.display = '';
+      } else {
+        msg.style.display = 'none';
+      }
     }
   }
 
