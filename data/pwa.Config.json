@@ -1,0 +1,9 @@
+{
+  "maxTilesToDownload": 1000,
+  "extractButtonLabel": "Extraire les données",
+  "clearCacheButtonLabel": "Vider Cache",
+  "offlineLabel": "Hors Ligne",
+  "onlineLabel": "En Ligne",
+  "offlineSimLabel": "Hors Ligne simulé",
+  "noCacheMessage": "Aucune donnée hors ligne. Veuillez vous connecter et extraire des données."
+}

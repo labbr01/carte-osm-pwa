@@ -1,0 +1,6 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Carte">
+  <rect width="100%" height="100%" fill="transparent"/>
+  <!-- simple pin / marker -->
+  <path d="M256 32C192 32 144 80 144 144c0 96 112 208 112 208s112-112 112-208C368 80 320 32 256 32z" fill="#2c3e50"/>
+  <circle cx="256" cy="144" r="56" fill="#ffffff"/>
+</svg>

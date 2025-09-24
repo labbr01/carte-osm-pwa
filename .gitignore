@@ -1,0 +1,40 @@
+# Node/npm
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+
+# Autres fichiers temporaires
+*.swp
+*.swo
+
+# Cache navigateur/service worker (ne pas versionner)
+cache/
+service-worker.js.map
+
+# Fichiers de build éventuels
+/dist/
+/build/
+
+# Environnements
+.env
+.env.*
+
+# Icônes générées automatiquement
+icons/*.ico
+
+# Dossiers de données temporaires
+/data/cache/

@@ -1,0 +1,19 @@
+{
+  "title": "Carte OSM - PWA",
+  "osmTiles": [
+    "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    "https://b.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    "https://c.tile.openstreetmap.org/{z}/{x}/{y}.png"
+  ],
+  "centerLat": 46.8,
+  "centerLng": -71.2,
+  "zoom": 12,
+  "themes": [
+    {
+      "name": "Sentinelle - Espèces exotiques envahissantes",
+      "url": "https://geo.environnement.gouv.qc.ca/donnees/rest/services/Biodiversite/EEE/MapServer/0",
+      "uniqueField": "Categorie"
+    }
+  ]
+}
+
