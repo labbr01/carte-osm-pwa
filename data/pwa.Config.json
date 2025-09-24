@@ -1,4 +1,5 @@
 {
+  "basePath": "/carte-osm-pwa/",
   "maxTilesToDownload": 1000,
   "extractButtonLabel": "Extraire les données",
   "clearCacheButtonLabel": "Vider Cache",
