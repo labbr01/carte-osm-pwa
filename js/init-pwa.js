@@ -12,13 +12,22 @@ fetch('data/pwa.Config.json')
     // Adapter dynamiquement le manifest
     const manifestLink = document.getElementById('manifest-link');
     if (manifestLink) manifestLink.setAttribute('href', base + 'manifest.json');
+    // Adapter dynamiquement les balises d'icônes (favicon, apple-touch-icon)
+    const iconLinks = document.querySelectorAll('link[rel="icon"], link[rel="apple-touch-icon"]');
+    iconLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && !href.startsWith('http') && !href.startsWith(base)) {
+        link.setAttribute('href', base + href.replace(/^\//, ''));
+      }
+    });
     // Enregistrement dynamique du service worker
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
         const swPath = base + 'js/pwa/service-worker.js';
-        // Si basePath est différent de '/' (ex: GitHub Pages), scope explicite, sinon scope par défaut
+        // Pour GitHub Pages, scope = base + 'js/pwa/'
         if (cfg.basePath && cfg.basePath !== '/') {
-          navigator.serviceWorker.register(swPath, { scope: base })
+          const swScope = base + 'js/pwa/';
+          navigator.serviceWorker.register(swPath, { scope: swScope })
             .then(function(reg) { console.log('Service worker registered', reg); })
             .catch(function(err) { console.warn('Service worker registration failed', err); });
         } else {
